@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafeZone : MonoBehaviour
+public class DoorZone : MonoBehaviour
 {
 
     // Use this for initialization
@@ -16,16 +16,18 @@ public class SafeZone : MonoBehaviour
     {
 
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-            Monster.Instance.monster = Monster.States.Passive;
+            Monster.Instance.monster = Monster.States.Agressive;
+            PlayerTP.Instance.needsToTP = false;
     }
 
 
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-            Monster.Instance.monster = Monster.States.Toying;
+            PlayerTP.Instance.needsToTP = true;
     }
 }

@@ -13,6 +13,7 @@ public class DarkroomScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        overlay = GameObject.FindGameObjectWithTag("Overlay");
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
     }
 
