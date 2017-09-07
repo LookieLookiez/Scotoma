@@ -44,15 +44,15 @@ public class RippleBehaviour : MonoBehaviour {
         if (myOwner.GetComponent<Ripple>().Iam == Ripple.WhatAmI.Monster)
         {
             temp = transform.localScale;
-            temp.x += Time.deltaTime;
-            temp.z += Time.deltaTime;
+            temp.x += Time.deltaTime * 2;
+            temp.z += Time.deltaTime * 2;
             transform.localScale = temp;
         }
         if (myOwner.GetComponent<Ripple>().Iam == Ripple.WhatAmI.Door)
         {
             temp = transform.localScale;
-            temp.x += Time.deltaTime / 10;
-            temp.z += Time.deltaTime / 10;
+            temp.x += Time.deltaTime * 4;
+            temp.z += Time.deltaTime * 4;
             transform.localScale = temp;
         }
 

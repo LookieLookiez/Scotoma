@@ -12,15 +12,19 @@ public class DoorBehaviourScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = myChild.GetComponent<Animator>();
-	}
+        player = GameObject.FindGameObjectWithTag("Player");
+
+    }
 
 	
 	// Update is called once per frame
 	void Update () {
         var dir = (this.gameObject.transform.position - player.transform.position).normalized;
-        var updatedDir = new Vector3(dir.x, 0, dir.z);
-        if(follow)
-        transform.LookAt(updatedDir);
+        var updatedDir = new Vector3(player.transform.position.x, 0, player.transform.position.z);
+        if (follow)
+            // transform.LookAt(updatedDir);
+            transform.LookAt(updatedDir);
+
 	}
 
     void OnTriggerEnter(Collider other)

@@ -23,17 +23,10 @@ public class SceneChanger : MonoBehaviour {
 
 	public void ChangeScenes(int buildIndex)
 	{
-		StartCoroutine (TimedSceneChange ());
 		onceItGoesBlackItllNeverGoBack = true;
 		SceneManager.LoadScene (buildIndex);
 	}
 
-	IEnumerator TimedSceneChange()
-	{
-		Debug.Log ("im running");
-		yield return new WaitForSeconds(25f);
-		Debug.Log ("im running");
-		SceneManager.LoadScene (2);
-	}
+	
 
 }
